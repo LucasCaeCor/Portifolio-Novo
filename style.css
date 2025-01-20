@@ -268,14 +268,17 @@ header {
 .skill-icon {
     width: 80px;
     height: 80px;
-    box-shadow: 30px 20px 10px rgba(0, 0, 0, 0.6);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 30px 20px 10px rgba(0, 0, 0, 0.6); /* Sombra sem alterar o fundo */
+    background: transparent; /* Garante que o fundo seja transparente */
+    border: none; /* Remove bordas */
 }
 
 .skill-icon:hover {
     transform: scale(1.0);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); /* Sombra mais forte ao passar o mouse */
 }
+
 
 @media (max-width: 768px) {
     .skill-icon {
@@ -287,7 +290,7 @@ header {
 
 /* Estilo da seção Projetos */
 .projetos {
-    margin: 40px 0;
+    margin: 20px 0;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     background: linear-gradient(145deg, #0f2027, #203a43, #2c5364); /* Gradiente sofisticado */
@@ -362,49 +365,76 @@ header {
 /* Lista de tecnologias */
 .tecnologias {
     display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha */
+    gap: 12px; /* Espaçamento entre os itens */
+    justify-content: center; /* Centraliza os itens */
     margin-bottom: 20px;
+    padding: 0 10px; /* Adiciona um pouco de espaçamento lateral para telas pequenas */
 }
 
 .tecnologias li {
     list-style-type: none;
-    background-color: #27ae60;
+    background-color: #6b7770;
     color: #ffffff;
     padding: 6px 15px;
     border-radius: 20px;
     font-size: 1rem;
     font-weight: bold;
+    text-align: center; /* Centraliza o texto nos itens */
+    white-space: nowrap; /* Evita quebra de linha dentro do item */
 }
+
+@media (max-width: 768px) {
+    .tecnologias li {
+        font-size: 0.9rem; /* Ajusta o tamanho da fonte para telas menores */
+        padding: 4px 10px; /* Reduz o espaçamento interno */
+    }
+}
+
+@media (max-width: 480px) {
+    .tecnologias {
+        gap: 8px; /* Reduz o espaçamento entre os itens em telas muito pequenas */
+    }
+
+    .tecnologias li {
+        font-size: 0.8rem; /* Fonte menor para caber melhor em telas pequenas */
+        padding: 4px 8px; /* Reduz ainda mais o padding */
+    }
+}
+
 
 /* Botão para ver o projeto */
 .btn-projeto {
     display: inline-block;
-    background-color: #3498db;
+    background-color: #087729;
     color: #fff;
     padding: 12px 30px;
     font-size: 1.1rem;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 25px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn-projeto:hover {
-    background-color: #2980b9;
+    background-color: #0fa493;
     transform: translateY(-3px); /* Efeito sutil de elevação */
 }
 
 
 /* Footer */
 .footer {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    border-top: 2px solid #fff;
-    margin-bottom: 0;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    padding: 20px 0;
+      transition: transform 0.5s ease, opacity 0.5s ease; /* Transição suave */
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
 }
+
 
 .footer-content {
     max-width: 800px;
@@ -435,7 +465,23 @@ header {
     filter: brightness(1.5);
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
+html, body {
+    height: 100%; /* Garante que o corpo ocupe toda a altura */
+    margin: 0; /* Remove margens externas */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Faz com que o conteúdo principal ocupe o espaço necessário */
+}
 
 
 /* Estilo do contêiner de texto */
