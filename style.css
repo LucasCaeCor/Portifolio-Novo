@@ -1,0 +1,465 @@
+body {
+    background: linear-gradient(to bottom right, #afc3d8, #03314e); /* Gradiente suave de cinza claro para branco */
+    font-family: Arial, sans-serif;
+    color: #000000;
+}
+/* Estilos para o Header e Barra de Navegação */
+header {
+    background-color: #000000; /* Cor de fundo escuro */
+    padding: 20px 0; /* Espaçamento interno */
+    position: fixed; /* Fixa a barra de navegação no topo */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Garante que a barra fique por cima de outros elementos */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-list {
+    list-style: none; /* Remove os marcadores de lista */
+    display: flex;
+    margin: 0; /* Remove margens extras */
+    padding: 0; /* Remove padding extra */
+}
+
+.nav-list li {
+    margin: 0 20px; /* Espaçamento entre os itens */
+}
+
+.nav-list li a {
+    color: #fff; /* Cor dos links */
+    text-decoration: none; /* Remove o sublinhado */
+    font-size: 18px; /* Tamanho da fonte */
+    font-weight: 500; /* Deixa o texto mais encorpado */
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+    letter-spacing: 1px; /* Espaçamento entre as letras */
+    transition: color 0.3s ease, transform 0.3s ease; /* Efeito de transição suave */
+}
+
+.nav-list li a:hover {
+    color: #f0f0f0; /* Cor ao passar o mouse */
+    transform: scale(1.1); /* Efeito de aumento no link */
+}
+
+/* Adicionando uma borda inferior ao passar o mouse */
+.nav-list li a:focus, .nav-list li a:hover {
+    border-bottom: 2px solid #f0f0f0; /* Borda que aparece quando o link é focado ou o mouse passa sobre */
+}
+
+/* Menu Hambúrguer */
+.hamburger-menu {
+    display: none; /* Inicialmente não aparece */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger-menu div {
+    background-color: #fff;
+    height: 4px;
+    width: 25px;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+/* Ajuste de responsividade */
+@media (max-width: 768px) {
+    header{
+        background-color: black;
+        height: 30px;
+    }
+    .nav-list {
+        
+        display: none; /* Esconde a lista de navegação por padrão */
+        width: 100%;
+        flex-direction: column; /* Coloca os itens da lista em coluna no mobile */
+        align-items: center; /* Alinha os itens ao centro */
+        background-color: #333;
+        position: absolute;
+        top: 60px; /* Coloca o menu logo abaixo do header */
+        left: 0;
+        padding: 10px 0;
+    }
+    
+    .nav-list li {
+        margin: 10px 0; /* Ajusta o espaçamento entre os itens */
+    }
+
+    .hamburger-menu {
+        display: flex; /* Exibe o menu hamburguer */
+    }
+
+    .nav-list.show {
+        display: flex; /* Exibe o menu quando a classe 'show' é adicionada */
+    }
+}
+
+/* Header */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    margin: 20px 0;
+    flex-wrap: wrap; /* Responsividade */
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-img-container {
+        margin-bottom: 20px;
+    }
+
+    #dynamic-title {
+        font-size: 2rem;
+    }
+}
+
+
+/* Seção Sobre */
+.sobre {
+    background: linear-gradient(145deg, #0f2027, #203a43, #2c5364); /* Gradiente sofisticado */
+    color: #88cde9;
+    padding: 60px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    margin: 20px 0;
+}
+
+.sobre-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Responsividade */
+    gap: 30px;
+}
+
+.sobre-imagem {
+    text-align: center;
+}
+
+.sobre-imagem img {
+    width: 250px;
+    height: auto;
+    border-radius:10%;
+    box-shadow: 50px 50px 50px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sobre-imagem img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+#dynamic-title {
+    margin-top: 15px;
+    font-size: 2.5rem;
+    color: #ffd700;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.sobre-texto {
+    max-width: 600px;
+}
+
+.sobre h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #ffd700;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.sobre p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: #ddd;
+    text-align: justify;
+}
+
+.sobre-destaques {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sobre-destaques li {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #fff;
+}
+
+.sobre-destaques li::before {
+    content: "✔";
+    color: #ffd700;
+    font-size: 1.4rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(2px);
+}
+
+@media (max-width: 768px) {
+    .sobre-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobre-imagem img {
+        width: 200px;
+    }
+
+    #dynamic-title {
+        font-size: 2rem;
+    }
+
+    .sobre h2 {
+        font-size: 2rem;
+    }
+}
+
+
+/* Seção Habilidades */
+.habilidades {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(145deg, #0f2027, #203a43, #2c5364); /* Gradiente sofisticado */
+    color: #88cde9;
+}
+
+.habilidades h2 {
+    font-size: 2.5rem;
+    color: #778dae;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.skills-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill-icon {
+    width: 80px;
+    height: 80px;
+    box-shadow: 30px 20px 10px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-icon:hover {
+    transform: scale(1.0);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+    .skill-icon {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+
+/* Estilo da seção Projetos */
+.projetos {
+    margin: 40px 0;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(145deg, #0f2027, #203a43, #2c5364); /* Gradiente sofisticado */
+    color: #ecf0f1; /* Cor mais suave para o texto */
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Adicionando sombra suave para destacar */
+}
+
+/* Título da seção */
+.projetos h2 {
+    font-size: 2.8rem;
+    color: #88cde9;
+    margin-bottom: 40px;
+
+}
+
+/* Container dos projetos */
+.projetos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Cartão do projeto */
+.projeto-card {
+    background-color: #1c2833; /* Cor mais neutra para o fundo */
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projeto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagem do projeto */
+.projeto-imagem {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+    border-bottom: 3px solid #f39c12; /* Linha de separação sutil */
+}
+
+.projeto-card:hover .projeto-imagem {
+    opacity: 0.85;
+}
+
+/* Informações do projeto */
+.projeto-info {
+    padding: 25px;
+}
+
+.projeto-info h3 {
+    font-size: 1.8rem;
+    color: #ecf0f1;
+    margin-bottom: 15px;
+}
+
+.projeto-info p {
+    color: #bdc3c7;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.5; /* Aumenta o espaçamento entre linhas para melhorar a leitura */
+}
+
+/* Lista de tecnologias */
+.tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tecnologias li {
+    list-style-type: none;
+    background-color: #27ae60;
+    color: #ffffff;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Botão para ver o projeto */
+.btn-projeto {
+    display: inline-block;
+    background-color: #3498db;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-projeto:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px); /* Efeito sutil de elevação */
+}
+
+
+/* Footer */
+.footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid #fff;
+    margin-bottom: 0;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer p {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.footer-icons {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-icons img {
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footer-icons img:hover {
+    transform: scale(1.2);
+    filter: brightness(1.5);
+}
+
+
+
+
+/* Estilo do contêiner de texto */
+.typing-container {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #babd86;
+    display: inline-block;
+    white-space: nowrap;
+    border-right: 3px solid #333; /* Cursor do tipo digitação */
+    padding-right: 5px;
+    animation: blink-caret 0.75s step-end infinite;
+
+    /* Adicionando linear-gradient */
+    background: linear-gradient(to right, #ca3813, #48e9e4); /* Gradiente da esquerda para a direita */
+    -webkit-background-clip: text; /* Faz o gradiente afetar o texto */
+    color: transparent; /* Deixa o texto transparente para o gradiente aparecer */
+    background-clip: none;
+}
+
+/* Animação de blink do cursor */
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
+}
